@@ -85,21 +85,13 @@ struct measurement_controller {
 int main(int argc, char *argv[]) {
   int test_no = 0;
   int counter = 0;
-  test_no++;
-  counter++;
   int total = 0;
   srand(time(nullptr));
   if (argc == 2) {
     test_no = std::atoi(argv[1]);
   }
 
-  Prefixtree trie;
-  //trie.insert("szo");
-  //trie.insert("masvalami");
-  std::cout << trie.size() << std::endl;
-  std::cout << trie.numNodes() << std::endl;
 
-  /*
   TEST("Create an empty tree. Size should be 0.  Number of nodes should be 1.",
        2) {
     Prefixtree trie;
@@ -120,6 +112,8 @@ int main(int argc, char *argv[]) {
     CHECK_EQ(4, trie.size());
     trie.insert("random");
     CHECK_EQ(5, trie.size());
+    std::cout << "Értelmes szavak: " << trie.size() << std::endl;;
+    std::cout << "Csúcsok: " <<  trie.numNodes() << std::endl;
   }
 
   TEST("Add a few elements. Number of nodes should grow.", 3) {
@@ -135,7 +129,7 @@ int main(int argc, char *argv[]) {
     CHECK_EQ(27, trie.numNodes());
   }
 
-  TEST("Add a few elements. Elements should be in the tree.", 5) {
+    TEST("Add a few elements. Elements should be in the tree.", 5) {
     Prefixtree trie;
     trie.insert("asd");
     trie.insert("ad");
@@ -260,7 +254,7 @@ int main(int argc, char *argv[]) {
     CHECK_EQ(true, trie.contains("silt"));
     CHECK_EQ(true, trie.contains("stir"));
     CHECK_EQ(true, trie.contains("still"));
-  }*/
+  }
 
   // PLUS POINTS
 
@@ -293,7 +287,7 @@ int main(int argc, char *argv[]) {
   }
   */
   /* MULTIWORD ANAGRAM TESTS */
-  /*
+/*
   TEST("Multiword anagramm search. Should produce multiword anagramms.", 10) {
     Prefixtree trie;
     trie.insert("tatami");
@@ -321,7 +315,7 @@ int main(int argc, char *argv[]) {
     CHECK_EQ("ma itat", trie2.anagramFor("tatami"));
     CHECK_EQ("tatami", trie2.anagramFor("amiatt"));
   }
-  */
+*/
   std::cout << ">>> TOTAL POINTS: " << total << std::endl;
   return 0;
 }

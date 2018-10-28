@@ -32,6 +32,11 @@ public:
 	std::size_t numNodes() const;
 	std::string anagramFor(std::string anagramma) const;
 	Node *find(const std::string& word, std::size_t & ind);
+	Node *_find(const std::string& word, std::size_t & ind);
+	Node *_findHELP(const std::string& word, std::size_t & ind, Node *x);
+	//bool _contains(std::string& word, Node *x);
+	bool _seged(std::string& word, Node *x);
+	bool _anagram(std::string& anagramma, Node *x, std::string& szo, std::string eredeti_szo) const;
 
 
 
